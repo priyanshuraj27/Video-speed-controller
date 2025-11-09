@@ -1,0 +1,80 @@
+/* styles for the floating Video Speed Controller */
+#vsc-container { z-index: 2147483647; }
+.vsc-root {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(20,20,20,0.78);
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  backdrop-filter: blur(6px);
+}
+.vsc-btn {
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  border: none;
+  padding: 4px 8px;
+  font-size: 18px;
+  line-height: 1;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.vsc-btn:hover { background: rgba(255,255,255,0.12); }
+.vsc-slider { width: 140px; }
+.vsc-reset {
+  background: rgba(255,255,255,0.04);
+  color: #fff;
+  border: none;
+  padding: 4px 6px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.vsc-label { font-weight: 600; font-size: 13px; padding-left: 4px; }
+
+/* small pages: reduce width */
+@media (max-width: 480px) {
+  .vsc-slider { width: 90px; }
+}
+
+/* Preset buttons in floating controller */
+.vsc-presets { display:flex; gap:6px; margin-left:6px }
+.vsc-preset {
+  background: rgba(255,255,255,0.04);
+  color: #fff;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: transform 180ms ease, background 200ms ease, box-shadow 200ms ease;
+}
+.vsc-preset:hover { transform: translateY(-2px); background: rgba(255,255,255,0.08); }
+.vsc-preset.active {
+  background: linear-gradient(90deg, rgba(79,195,247,0.18), rgba(11,121,166,0.18));
+  box-shadow: 0 6px 18px rgba(11,121,166,0.16);
+  transform: translateY(-3px) scale(1.03);
+}
+
+/* tooltip shown when a preset is active (floating controller) */
+.vsc-tooltip {
+  position: absolute;
+  top: -34px;
+  left: 0;
+  pointer-events: none;
+  background: rgba(20,20,20,0.92);
+  color: #fff;
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 180ms ease, transform 180ms ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  z-index: 2147483648;
+}
+.vsc-tooltip.visible { opacity: 1; transform: translateY(0); }
+.vsc-tooltip:after { content: ''; position: absolute; bottom: -6px; left: 50%; transform: translateX(-50%); border-width: 6px; border-style: solid; border-color: rgba(20,20,20,0.92) transparent transparent transparent; }

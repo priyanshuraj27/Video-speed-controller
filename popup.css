@@ -1,0 +1,15 @@
+body{font-family:system-ui, -apple-system, 'Segoe UI', Roboto, Arial; margin:0;}
+.popup-root{padding:12px; width:220px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
+.row.small{justify-content:flex-end}
+button{background:#111;color:#fff;border:none;padding:6px 10px;border-radius:6px;cursor:pointer}
+.speed{font-weight:700;font-size:16px;text-align:center;flex:1}
+button:active{transform:translateY(1px)}
+.row input[type="range"]{width:100%;-webkit-appearance:none;height:6px;border-radius:6px;background:#ddd}
+.row input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:#111;border:2px solid #fff;box-shadow:0 1px 2px rgba(0,0,0,0.3)}
+/* standard appearance property for compatibility */
+.row input[type="range"]{appearance:none}
+.row.quick{display:flex;gap:6px;justify-content:space-between}
+.row.quick .preset{flex:1;padding:6px 6px;border-radius:6px;background:#222;color:#fff;border:none;cursor:pointer}
+.row.quick .preset:active{transform:translateY(1px)}
+.row.quick .preset.active{outline:2px solid #4fc3f7;background:#0b79a6}
