@@ -175,19 +175,7 @@
       try { setSpeed(msg.speed); } catch (e) { }
       return;
     }
-    if (msg.type === 'vsc-toggle-controller') {
-      try {
-        const el = document.getElementById('vsc-container');
-        if (el) {
-          el.style.display = (el.style.display === 'none') ? '' : 'none';
-          try { console.log('[VSC][content] toggled controller visibility to', el.style.display); } catch (e) {}
-        } else {
-          // no container found (maybe content script ran early in a document that later removed root) - try to reapply
-          try { console.log('[VSC][content] no controller element found to toggle; re-applying UI'); } catch (e) {}
-          applyToNewVideos();
-        }
-      } catch (e) {}
-    }
+    // vsc-toggle-controller removed: controller visibility toggling handled no longer by messages
   });
 
   // handle preset clicks
