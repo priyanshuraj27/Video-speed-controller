@@ -3,7 +3,7 @@
   const dec = document.getElementById('dec');
   const reset = document.getElementById('reset');
   const speedLabel = document.getElementById('speed');
-  const toggleController = document.getElementById('toggleController');
+  // toggleController removed
   const speedSlider = document.getElementById('speedSlider');
 
   function sendCommand(command) {
@@ -168,14 +168,7 @@
     });
   }
 
-  toggleController.addEventListener('click', () => {
-    try {
-      chrome.tabs.query({active:true,currentWindow:true}, (tabs) => {
-        if (!tabs || !tabs[0]) return;
-        chrome.tabs.sendMessage(tabs[0].id, { type: 'vsc-toggle-controller' });
-      });
-    } catch (e) {}
-  });
+  // Toggle controller feature removed — no handler
 
   // update when popup opens
   updateCurrentSpeed();
