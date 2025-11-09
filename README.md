@@ -23,8 +23,16 @@ Files
 - `content.js` - injected UI and logic
 - `style.css` - UI styling
 - `icons/icon128.png` - optional icon (place a 128×128 PNG here)
-
 Options page
 - Open the extension's Options (via the Extensions page or the extension's context) to view and manage saved per-site speeds. You can delete individual saved speeds or clear them all.
+
+License & CI
+
+- License: MIT (see `LICENSE`)
+- Basic GitHub Actions workflow is included at `.github/workflows/ci.yml` to validate `manifest.json` and check the default icon is present.
+
+Badge
+
+![manifest-check](https://github.com/priyanshuraj27/Video-speed-controller/actions/workflows/ci.yml/badge.svg)
 
 Enjoy! If you'd like features like per-site default speeds, keyboard-only mode, or better styling, I can add them next.
