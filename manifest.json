@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Video Speed Controller",
-  "version": "1.0",
+  "version": "1.4",
   "description": "Adjust video playback speed on any website with a floating controller and keyboard shortcuts.",
   "permissions": ["activeTab", "scripting", "storage"],
   "host_permissions": ["http://*/*", "https://*/*"],
@@ -20,9 +20,8 @@
     {
       "matches": ["http://*/*", "https://*/*"],
       "js": ["content.js"],
-      "css": ["style.css"],
       "run_at": "document_idle",
-      "all_frames": false
+      "all_frames": true
     }
   ],
   "icons": {

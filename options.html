@@ -15,8 +15,21 @@
       <button id="refresh">Refresh</button>
       <button id="clearAll">Clear all saved speeds</button>
     </div>
+
+    <section class="blocklist">
+      <h2>Blocked URLs</h2>
+      <p>The extension will <strong>not</strong> run on URLs containing any of these substrings.</p>
+      <p class="hint">Example: <code>youtube.com/watch</code> blocks the watch page but lets <code>youtube.com/shorts</code> still work.</p>
+      <form id="addBlockForm" class="add-row">
+        <input id="blockInput" type="text" placeholder="e.g. youtube.com/watch" aria-label="URL pattern to block" />
+        <button id="addBlockBtn" type="submit" class="add-btn" aria-label="Add pattern">+</button>
+      </form>
+      <ul id="blocklistList" class="blocklist-list" aria-live="polite"></ul>
+      <span id="blocklistStatus" class="status" role="status" aria-live="polite"></span>
+    </section>
+
     <footer>
-      <small>Speeds are stored locally (chrome.storage.local) with keys prefixed by <code>vsc_speed_</code>.</small>
+      <small>Speeds and blocklist are stored locally (chrome.storage.local). Speed keys are prefixed by <code>vsc_speed_</code>; blocklist is <code>vsc_blocklist</code>.</small>
     </footer>
   </main>
   <script src="options.js"></script>

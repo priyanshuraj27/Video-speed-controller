@@ -8,23 +8,29 @@
 </head>
 <body>
   <div class="popup-root">
+    <div id="blockedNotice" class="blocked-notice" hidden>
+      Disabled on this site. <a href="#" id="openOptions">Edit blocklist</a>
+    </div>
     <div class="row">
-        <button id="dec">−</button>
-        <div id="speed" class="speed">1.00×</div>
-        <button id="inc">+</button>
+        <button id="dec" aria-label="Decrease playback speed">−</button>
+        <div id="speed" class="speed" role="status" aria-live="polite" aria-label="Current playback speed">1.00×</div>
+        <button id="inc" aria-label="Increase playback speed">+</button>
     </div>
       <div class="row">
-          <input id="speedSlider" type="range" min="0.25" max="4" step="0.05" />
+          <input id="speedSlider" type="range" min="0.25" max="4" step="0.05" aria-label="Playback speed" aria-describedby="speed" />
       </div>
         <div class="row quick">
-          <button class="preset" data-speed="0.5">0.5×</button>
-          <button class="preset" data-speed="1.5">1.5×</button>
-          <button class="preset" data-speed="2">2×</button>
-          <button class="preset" data-speed="3">3×</button>
-          <button class="preset" data-speed="4">4×</button>
+          <button class="preset" data-speed="0.5" aria-label="Set speed to 0.5x">0.5×</button>
+          <button class="preset" data-speed="1.5" aria-label="Set speed to 1.5x">1.5×</button>
+          <button class="preset" data-speed="2" aria-label="Set speed to 2x">2×</button>
+          <button class="preset" data-speed="3" aria-label="Set speed to 3x">3×</button>
+          <button class="preset" data-speed="4" aria-label="Set speed to 4x">4×</button>
         </div>
       <div class="row small">
-        <button id="reset">Reset</button>
+        <button id="reset" aria-label="Reset playback speed to 1x">Reset</button>
+      </div>
+      <div class="row footer-row">
+        <button id="settingsBtn" class="settings-btn" aria-label="Open settings">⚙ Settings</button>
       </div>
   </div>
   <script src="popup.js"></script>
